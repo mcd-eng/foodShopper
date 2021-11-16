@@ -1,7 +1,9 @@
+import os
+from dotenv import load_dotenv
 from azure.cosmos import CosmosClient
 
-URL ="https://foodie.documents.azure.com:443/"
-KEY ="nZOBrQ5E6HYWVmVj1kJZju574JiWtezEET8VpgZQOIQP1AUO80IswbG2c2EWFBlPvJUUfYsEceRo7QirmCc1rw=="
+URL = os.getenv("URL")
+KEY = os.getenv("KEY")
 client = CosmosClient(URL, credential=KEY)
 
 database_name = 'testDatabase'
